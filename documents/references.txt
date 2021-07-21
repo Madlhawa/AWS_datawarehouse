@@ -1,2 +1,11 @@
+redshift credentials
+ cluster = redshift_db
+ db = 'rs_source',
+ host='redshift-db.c9adkqwvnbdx.ap-southeast-1.redshift.amazonaws.com', 
+ port= '5439', 
+ user= 'awsuser', 
+ password= 'Sysco123'
+
+
 https://www.sqlshack.com/getting-started-with-amazon-s3-and-python/
 https://rudderstack.com/guides/access-and-query-your-amazon-redshift-data-using-python-and-r
