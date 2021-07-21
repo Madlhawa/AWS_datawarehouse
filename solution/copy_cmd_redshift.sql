@@ -3,7 +3,6 @@ truncate table rs_source.public.orders;
 truncate table rs_source.public.productCategories;
 truncate table rs_source.public.products;
 
---copy customer from 's3://seed-source-data/customers.csv' access_key_id 'AKIAU6OCCE23FELOD3WN' secret_access_key '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' DELIMITER ',' IGNOREHEADER 1 TIMEFORMAT 'auto';
 
 copy rs_source.public.customer
 from 's3://seed-source-data/customers.csv'
@@ -38,7 +37,6 @@ truncate table rs_source.public.orders;
 truncate table rs_source.public.productCategories;
 truncate table rs_source.public.products;
 
---copy customer from 's3://seed-source-data/customers.csv' access_key_id 'AKIAU6OCCE23FELOD3WN' secret_access_key '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' DELIMITER ',' IGNOREHEADER 1 TIMEFORMAT 'auto';
 
 copy rs_source.public.customer
 from 's3://seed-source-data/customers.csv'
