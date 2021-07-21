@@ -1,8 +1,8 @@
-CREATE DATABASE rs_source;
+CREATE DATABASE redshift_db;
 
-CREATE SCHEMA sysco authorization awsuser;
+CREATE SCHEMA re_source authorization awsuser;
 
-CREATE TABLE customer (
+CREATE TABLE rs_source.customer (
     CustomerID  int NOT NULL,
     FirstName   nvarchar(MAX),
     MiddleName  nvarchar(MAX),
@@ -15,7 +15,7 @@ CREATE TABLE customer (
     
 );
 
-CREATE TABLE orders (
+CREATE TABLE rs_source.orders (
     Order_id    INT NOT NULL,
     Order_date  nvarchar(50),
     Order_status    nvarchar(50),
@@ -27,13 +27,13 @@ CREATE TABLE orders (
     PRIMARY KEY (Order_id)
 );
 
-CREATE TABLE productCategories (
+CREATE TABLE rs_source.productCategories (
     Category_ID INT NOT NULL,
     Category    nvarchar(50)
     PRIMARY KEY (Category_ID)
 );
 
-CREATE TABLE products (
+CREATE TABLE rs_source.products (
     Product_id  INT NOT NULL,
     Product     nvarchar(50),
     unit_price  FLOAT,
@@ -41,4 +41,3 @@ CREATE TABLE products (
     Category    INT,
     PRIMARY KEY (Product_id)
 );
-
