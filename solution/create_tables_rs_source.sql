@@ -12,7 +12,6 @@ CREATE TABLE rs_source.customer (
     PhoneNumberType nvarchar(MAX),
     EmailAddress    nvarchar(MAX),
     PRIMARY KEY (CustomerID)
-    
 );
 
 CREATE TABLE rs_source.orders (
