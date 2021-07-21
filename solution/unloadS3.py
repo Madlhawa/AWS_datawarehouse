@@ -1,6 +1,4 @@
-import numpy as np
 from sqlalchemy import create_engine
-import pandas as pd
 from datetime import datetime
 
 engine = create_engine('postgresql://awsuser:Sysco123@redshift-db.c9adkqwvnbdx.ap-southeast-1.redshift.amazonaws.com:5439/rs_source')
