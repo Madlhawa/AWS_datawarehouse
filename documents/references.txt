@@ -1,0 +1,2 @@
+https://www.sqlshack.com/getting-started-with-amazon-s3-and-python/
+https://rudderstack.com/guides/access-and-query-your-amazon-redshift-data-using-python-and-r
