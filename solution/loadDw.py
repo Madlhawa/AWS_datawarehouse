@@ -5,13 +5,12 @@ engine = create_engine('postgresql://awsuser:Sysco123@redshift-cluster.c9adkqwvn
 
 tables = [
     'customer',
-    'orders',
-    'products',
-    'category' 
+    'address',
+    'orders'
 ]
 
 with engine.connect() as connection:
     for table in tables:
-        query = f"truncate table redshift_db.sales.stg_{table}; copy redshift_db.sales.stg_{table} from 's3://seed-data-lake/{table if table != 'category' else 'productcategories'}000' iam_role 'arn:aws:iam::340246275766:role/Redshift' DELIMITER ',' TIMEFORMAT 'auto';"
+        query = f"truncate table redshift_db.sales.stg_{table}; copy redshift_db.sales.stg_{table} from 's3://seed-data-lake/{table+'000' if table != 'address' else 'address.csv'}' iam_role 'arn:aws:iam::340246275766:role/Redshift' DELIMITER ',' TIMEFORMAT 'auto';"
         result = connection.execute(query)
         print(f'loding table {table}')
