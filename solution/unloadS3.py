@@ -6,11 +6,11 @@ tables = [
     'customer',
     'orders',
     'products',
-    'productcategories'
+    'category' #productcategories
 ]
 with engine.connect() as connection:
     for table in tables:
-        query = f"unload('select * from rs_source.{table}') to 's3://seed-data-lake/{table}' iam_role 'arn:aws:iam::340246275766:role/Redshift' parallel off allowoverwrite csv;"
+        query = f"unload('select * from rs_source.{table if table != 'category' else 'productcategories'}') to 's3://seed-data-lake/{table}' iam_role 'arn:aws:iam::340246275766:role/Redshift' parallel off allowoverwrite csv;"
         result = connection.execute(query)
         print(f'loding table {table}')
 
