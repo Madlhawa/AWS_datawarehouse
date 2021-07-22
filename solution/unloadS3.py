@@ -1,5 +1,4 @@
 from sqlalchemy import create_engine
-from datetime import datetime
 
 engine = create_engine('postgresql://awsuser:Sysco123@redshift-cluster.c9adkqwvnbdx.ap-southeast-1.redshift.amazonaws.com:5439/redshift_db')
 
