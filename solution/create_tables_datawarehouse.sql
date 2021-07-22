@@ -14,7 +14,7 @@ CREATE TABLE Sales.stg_customer (
 
 CREATE TABLE Sales.stg_orders (
     Order_id    INT NOT NULL,
-    Order_date  DATE,
+    Order_date  nvarchar(50),
     Order_status    nvarchar(50),
     Product_id  INT,
     Qty_ordered INT,
