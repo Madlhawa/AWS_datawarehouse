@@ -21,5 +21,7 @@ SELECT a.customerid, c.customersurrkey AS dim_customer, a.country, a.addresstype
 FROM Sales.stg_address a
 LEFT OUTER JOIN Sales.Tgt_Dim_customer c ON a.customerid = c.CustomerID;
 """
+with engine.connect() as connection:
+    result = connection.execute(query)
 
-result = connection.execute(query)
+print("data loaded into target")
