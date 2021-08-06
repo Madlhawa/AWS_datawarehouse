@@ -1,6 +1,10 @@
 from sqlalchemy import create_engine
+from configparser import ConfigParser
 
-engine = create_engine('postgresql://awsuser:Sysco123@redshift-cluster.c9adkqwvnbdx.ap-southeast-1.redshift.amazonaws.com:5439/redshift_db')
+config = ConfigParser()
+config.read('config.ini')
+
+engine = create_engine('postgresql://'+config['redshift']['username']+':'+config['redshift']['username']+'@redshift-cluster.c9adkqwvnbdx.ap-southeast-1.redshift.amazonaws.com:5439/redshift_db')
 
 
 tables = [
